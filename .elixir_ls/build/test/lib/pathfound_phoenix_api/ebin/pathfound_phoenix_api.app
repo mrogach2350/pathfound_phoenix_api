@@ -23,6 +23,7 @@
                         'Elixir.PathfoundPhoenixApi.Router',
                         'Elixir.PathfoundPhoenixApi.Router.Helpers',
                         'Elixir.PathfoundPhoenixApi.UserSocket',
+                        'Elixir.PathfoundPhoenixApi.UtilsView',
                         'Elixir.PathfoundPhoenixApi.Weapon',
                         'Elixir.PathfoundPhoenixApi.WeaponController',
                         'Elixir.PathfoundPhoenixApi.WeaponView',

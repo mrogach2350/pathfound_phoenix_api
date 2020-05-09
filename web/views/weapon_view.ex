@@ -10,6 +10,22 @@ defmodule PathfoundPhoenixApi.WeaponView do
   end
 
   def render("weapon.json", %{weapon: weapon}) do
-    %{id: weapon.id}
+    %{
+      id: weapon.id,
+      critical: weapon.critical,
+      damage_type: weapon.damage_type,
+      description: weapon.description,
+      dmg_l: weapon.dmg_l,
+      dmg_m: weapon.dmg_m,
+      dmg_s: weapon.dmg_s,
+      dmg_t: weapon.dmg_t,
+      name: weapon.name,
+      proficiency: weapon.proficiency,
+      source: weapon.source,
+      special: weapon.special,
+      weapon_class: weapon.weapon_class,
+      weight: weapon.weight,
+      price: weapon.price
+    }
   end
 end

@@ -17,12 +17,14 @@ defmodule PathfoundPhoenixApi.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/armor", ArmorController, except: [:new, :edit]
-    resources "/weapons", WeaponController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PathfoundPhoenixApi do
-  #   pipe_through :api
-  # end
+  scope "/api", PathfoundPhoenixApi do
+    pipe_through :api
+
+    resources "/armor", ArmorController, except: [:new, :edit, :delete, :update, :create]
+    resources "/weapons", WeaponController, except: [:new, :edit, :delete, :update, :create]
+
+  end
 end

@@ -36,8 +36,9 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :pathfound_phoenix_api, PathfoundPhoenixApi.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "mrogach",
-  password: "",
+  username: "postgres",
+  password: "postgres",
   database: "pathfound_phoenix_api_dev",
   hostname: "localhost",
+  port: 5433,
   pool_size: 10

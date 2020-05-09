@@ -3,7 +3,8 @@ defmodule PathfoundPhoenixApi.ArmorSeed do
   alias PathfoundPhoenixApi.Repo
 
   def seed() do
-    "/Users/mrogach/Code/pathfound/pathfound-mongo/data/baseArmor.json"
+    :pathfound_phoenix_api
+    |> Application.app_dir("priv/repo/data/baseArmor.json")
     |> File.read()
     |> case do
       {:ok, data} ->

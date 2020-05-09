@@ -2,10 +2,37 @@ defmodule PathfoundPhoenixApi.WeaponController do
   use PathfoundPhoenixApi.Web, :controller
 
   alias PathfoundPhoenixApi.Weapon
+  alias PathfoundPhoenixApi.UtilsView
+  alias PathfoundPhoenixApi.ErrorView
 
-  def index(conn, _params) do
-    weapons = Repo.all(Weapon)
-    render(conn, "index.json", weapons: weapons)
+  def index(conn, params) do
+    case params do
+      %{ "ps" => page_size, "pn" => page_number } ->
+        case {page_size, page_number} do
+          {_, ""} ->
+            render(conn, ErrorView, "error.json", error: "page number is missing")
+
+          {"", _} ->
+            render(conn, ErrorView, "error.json", error: "page size is missing")
+
+          {page_size, page_number} ->
+            ps = String.to_integer(page_size)
+            pn = String.to_integer(page_number)
+
+            weapons = Weapon
+              |> Repo.all
+              |> Enum.slice(pn * ps, ps)
+            render(conn, "index.json", weapons: weapons)
+        end
+
+      %{} ->
+        count = Weapon
+          |> Repo.all
+          |> Enum.count
+        render(conn, UtilsView, "count.json", count: count)
+    end
+
+
   end
 
   def create(conn, %{"weapon" => weapon_params}) do
