@@ -25,6 +25,5 @@ defmodule PathfoundPhoenixApi.Router do
 
     resources "/armor", ArmorController, except: [:new, :edit, :delete, :update, :create]
     resources "/weapons", WeaponController, except: [:new, :edit, :delete, :update, :create]
-
   end
 end

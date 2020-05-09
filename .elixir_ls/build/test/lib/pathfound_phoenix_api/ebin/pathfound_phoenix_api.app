@@ -17,8 +17,6 @@
                         'Elixir.PathfoundPhoenixApi.Gettext',
                         'Elixir.PathfoundPhoenixApi.LayoutView',
                         'Elixir.PathfoundPhoenixApi.ModelCase',
-                        'Elixir.PathfoundPhoenixApi.PageController',
-                        'Elixir.PathfoundPhoenixApi.PageView',
                         'Elixir.PathfoundPhoenixApi.Repo',
                         'Elixir.PathfoundPhoenixApi.Router',
                         'Elixir.PathfoundPhoenixApi.Router.Helpers',
